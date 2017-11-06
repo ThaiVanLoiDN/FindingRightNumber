@@ -1,9 +1,78 @@
+/* =========================== Layout ===========================*/
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+/*Header*/
+
+.header{
+	padding: 30px 0px;
+}
+
+.nav-menu{
+	padding-bottom: 20px;
+}
+
 h3.title{
 	font-size: 40px;
 	text-align: center;
 }
 
+.navbar {
+    border-radius: 0px;
+    
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+/*Footer*/
+
 div.footer .copyright{
-	font-size: 13px;
+	font-size: 15px;
 	text-align: center;
 }
+
+.footer .col-md-12{
+	padding-right: 0px;
+	padding-left: 0px
+}
+
+.footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .col-md-12{
+    border-top: 1px solid #ccc;
+
+}
+
+
+/* =========================== Index ===========================*/
+.form-room{
+	padding: 20px 0px;
+}
+
+.form-room form{
+	padding-bottom: 10px;
+}
+
+
+/* =========================== Game Start ===========================*/
+
+.table-game{
+	padding: 10px;
+	font-size: 30px;
+	text-align: center;
+}
+
+

@@ -72,7 +72,7 @@
 			$('#startGame').hide();
 			
 			//generate grid
-			$('#mainScreen').append('<table class="table table-bordered"><tbody></tbody></table>');
+			$('#mainScreen').append('<table class="table table-bordered"><tbody class="table-game"></tbody></table>');
 			var count = 1;
 			for(var i=0;i<rows;i++){
 				$('#mainScreen > table > tbody').append('<tr id="'+i+'-tr"><tr/>');

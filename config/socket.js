@@ -44,7 +44,7 @@ module.exports = function(server){
 				socket.join(room);
 				//emit wait status to all players
 				socket.emit('wait',{
-					'display_data' : 'Your Game token is : <b>'+data.token+'</b><br>Waiting for other players to join...'
+					'display_data' : '<h2>Your Game token is : <b style="color: red;">'+data.token+'</b><br>Waiting for other players to join...</h2>'
 				});
 				return;
 			}
@@ -53,7 +53,7 @@ module.exports = function(server){
 			//Game already started
 			if(game.status == 'ready'){
 				socket.emit('missed',{
-					'display_data' : 'Sorry...Game has already been started, please join the other room or create a new room :('
+					'display_data' : '<h2>Sorry...Game has already been started, please join the other room or create a new room :(</h2>'
 				});
 				return;
 			}

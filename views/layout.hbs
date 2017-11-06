@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{title}}</title>
+    <title>{{title}}Finding Right Number</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,26 +12,46 @@
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="header">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="title">Finding Right Number</h3>
+                <h3 class="title text-uppercase text-info"><a href="/">Finding Right Number</a></h3>
             </div>
         </div>
     </div>
 
-    <div class="content">
-        {{{body}}}
+    <div class="nav-menu">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">HOME</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="mailto:dhlband@gmail.com?Subject=Find%20Right%20Number">[Contact]</a>
+                    </li>
+                    <li>
+                        <a href="/game-tutorial">[Game Tutorial]</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="container">
+        <div class="content">
+            {{{body}}}
+        </div>
+
+
     </div>
 
     <div class="footer">
         <div class="col-md-12">
-            <hr>
             <h4 class="copyright">Copyright DHL Band @ 2017</h4>
         </div>
     </div>
-
 </div>
 
 </body>
