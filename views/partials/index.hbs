@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <form class="form-horizontal" action="/play" method="post">
+                            <fieldset>
+                                <h3>Join the room is exists</h3>
+                                <input id="userin" name="user" type="text" placeholder="Enter your name here" required class="form-control input-md" autocomplete="off"></br>
+                                <input id="keyin" name="key" type="text" placeholder="Enter the key of room here" required class="form-control input-md" autocomplete="off"></br>
+                                <button type="submit" id="joinbutton" class="btn btn-info ">Join</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="col-md-6" >
+                        <form class="form-horizontal" action="/play" method="post">
+                            <fieldset>
+                                <h3>Create the new room</h3>
+                                <input id="user" name="user" type="text" placeholder="Your Name" required class="form-control input-md" autocomplete="off"></br>
+                                <input name="rows" type="hidden" value="9">
+                                <input name="cols" type="hidden" value="9">
+                                <input name="minPlayers" type="hidden" value="5">
+								<input name="freezeTime" type="hidden" value="0">
+								<button type="submit" class="btn btn-success">New room</button>  
+                            </fieldset>
+                        </form>                
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
