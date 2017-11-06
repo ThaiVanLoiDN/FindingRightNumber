@@ -24,6 +24,10 @@ h3.title{
 	text-align: center;
 }
 
+.nav-menu .col-md-12{
+	padding-right: 0px;
+	padding-left: 0px
+}
 .navbar {
     border-radius: 0px;
     
@@ -32,10 +36,17 @@ h3.title{
     color: #ffffff;
 }
 
+/*Main*/
+.main{
+	margin-bottom: 100px;
+}
+
+
 /*Footer*/
 
 div.footer .copyright{
 	font-size: 15px;
+	line-height: 50px;
 	text-align: center;
 }
 
@@ -46,9 +57,10 @@ div.footer .copyright{
 
 .footer {
     position: fixed;
-    height: 100px;
+    height: 80px;
     bottom: 0;
     width: 100%;
+    background-color: #cccccc;
 }
 
 .footer .col-md-12{
@@ -71,8 +83,14 @@ div.footer .copyright{
 
 .table-game{
 	padding: 10px;
+}
+
+.table-game .grid_cell{}
+
+
+.table-game .grid_cell{
+	cursor: pointer;
+	padding: 20px 0px;
 	font-size: 30px;
 	text-align: center;
 }
-
-
