@@ -94,3 +94,26 @@ div.footer .copyright{
 	font-size: 30px;
 	text-align: center;
 }
+
+/* =========================== Game Start ===========================*/
+div.content-tutorial{
+
+}
+
+div.content-tutorial p{
+	font-size: 18px;
+	text-align: justify;
+}
+div.content-tutorial p.image{
+	text-align: center;
+}
+div.content-tutorial p.image img.img-responsive{
+	border: 1px solid #ccc;
+	text-align: center;
+	width: 100%;
+}
+div.content-tutorial p.author{
+	text-align: right;
+	font-style: italic;
+}
+
