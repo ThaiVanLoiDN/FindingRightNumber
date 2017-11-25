@@ -48,4 +48,5 @@ $> npm install
 $> node app.js
 ```
 
-Browse the following address: `http://localhost:8001`
+Browse the following address: <a href="http://localhost:8001" target="_blank">`http://localhost:8001`</a>
+

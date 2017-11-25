@@ -179,10 +179,10 @@
 		function gameDone(data){
 			$("#overlay").hide();
 			displayData(data);
-			var html = '<p><b>Winners :</b></p>';
+			var html = '<p class="winner"><b>Winners :</b></p>';
 
 			for(var i=0;i<data.winners.length;i++){
-				html += '<p>'+data.winners[i].name+' : '+data.winners[i].score+'</p>';
+				html += '<p class="champion">@'+data.winners[i].name+' : '+data.winners[i].score+'</p>';
 			}
 
 			$('#mainScreen').append(html);

@@ -44,7 +44,7 @@ module.exports = function(server){
 				socket.join(room);
 				//emit wait status to all players
 				socket.emit('wait',{
-					'display_data' : '<h2>Your Game token is : <b style="color: red;">'+data.token+'</b><br>Waiting for other players to join...</h2>'
+					'display_data' : '<h2>Your Game token is : <b style="color: red;">'+data.token+'</b><br><em>Waiting for other players to join...</em></h2>'
 				});
 				return;
 			}
@@ -53,7 +53,7 @@ module.exports = function(server){
 			//Game already started
 			if(game.status == 'ready'){
 				socket.emit('missed',{
-					'display_data' : '<h2>Sorry...Game has already been started, please join the other room or create a new room :(</h2>'
+					'display_data' : '<h2>Sorry...Game has already been started, please join the other room or create a new room by click <a href="/">here</a></h2>'
 				});
 				return;
 			}
@@ -89,7 +89,7 @@ module.exports = function(server){
 			
 			if(game.players.length < 2){
 				socket.emit('no_players',{
-					'display_data' : 'There are no other players.<br>Wait until atleast one player joins.<br>Send your token <b>'+data.token+'</b> to friends.',
+					'display_data' : 'There are no other players.<br><em>Wait until at least one player joins.</em><br>Send your token <b>'+data.token+'</b> to friends.',
 					'status' : false
 				});
 				return;
@@ -133,7 +133,7 @@ module.exports = function(server){
 				var winners = getWinner(game);
 				
 				io.sockets.to(token).emit('game_done', {
-					'display_data' : 'Game completed.<br>You can start a new game <a href="/">here</a>.<br>',
+					'display_data' : 'Game completed.<br><strong>You can start a new game <a href="/">here</a></strong>.<br>',
 					'winners' : winners
 				});
 				
@@ -173,7 +173,7 @@ module.exports = function(server){
 							if(game.players.length == 1 && game.status === "ready"){
 								console.log("game done");
 								socket.broadcast.to(token).emit('abort',{
-                                    'display_data': '<h2>You are the Winner</h2><h4>Start another Game <a href="/">here</a>.</h4>'
+                                    'display_data': '<h2 class="winner">You are the Winner</h2><h4>Start another Game <a href="/">here</a>.</h4><br />'
                                 });
 								game.players[0].socket.leave(token);
 								delete game;
@@ -194,7 +194,6 @@ module.exports = function(server){
 		
 		function getPlayersInfo(game){
 			players_info = {};
-			//console.log(game.players);
 			for(var each in game.players){
 				players_info[game.players[each].name] = {
 					'score' : game.players[each].score,

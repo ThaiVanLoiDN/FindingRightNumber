@@ -117,3 +117,23 @@ div.content-tutorial p.author{
 	font-style: italic;
 }
 
+div#mainScreen {
+	font-size: 20px;
+}
+.winner{
+	color: red;
+	font-size: 30px;
+}
+
+.champion{
+	font-weight: bold;
+}
+
+.list-group-item{
+	font-size: 15px;
+}
+.list-group-item-wait{
+	list-style: none;
+	font-size: 15px;
+	font-weight: bold;
+}
