@@ -166,11 +166,15 @@
 				$('#sideScreenR').append('<li class="list-group-item"><font color="'+(("color"in data)? data.color : color)+'">'+data.display_data+'</font></li>');
 			}
 		}
+
+		function pad(number) {
+		    return (number < 10) ? '0' + number.toString() : number.toString();
+		}
 		
 		function displayDataScreenL(data){
 			var html = '<ul class="list-group">';
 			for(var player in data){
-				html += '<li class="list-group-item"><span class="badge">'+data[player].score+'</span><b>'+player+'</b><div class="color" style="width:20px;height:20px;background-color:'+data[player].color+';display: inline-block;float: right;margin-right: 10px;"></div></li>';
+				html += '<li class="list-group-item"><span class="badge">'+pad(data[player].score)+'</span><b>'+player+'</b><div class="color" style="width:20px;height:20px;background-color:'+data[player].color+';display: inline-block;float: right;margin-right: 10px;"></div></li>';
 			}
 			html += '</ul>';
 			$('#sideScreenL').html(html);

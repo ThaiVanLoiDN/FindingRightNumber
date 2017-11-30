@@ -22,6 +22,7 @@ a:hover{
 h3.title{
 	font-size: 40px;
 	text-align: center;
+	padding-bottom: 30px;
 }
 
 .nav-menu .col-md-12{
@@ -136,4 +137,15 @@ div#mainScreen {
 	list-style: none;
 	font-size: 15px;
 	font-weight: bold;
+}
+
+.token{
+	color: red;
+}
+
+#startGame{
+	margin-left: 16px;
+}
+.btn-quite{
+	width: 100%;
 }

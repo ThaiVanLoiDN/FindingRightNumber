@@ -89,7 +89,7 @@ module.exports = function(server){
 			
 			if(game.players.length < 2){
 				socket.emit('no_players',{
-					'display_data' : 'There are no other players.<br><em>Wait until at least one player joins.</em><br>Send your token <b>'+data.token+'</b> to friends.',
+					'display_data' : 'There are no other players.<br><strong>Wait until at least one player joins.</strong><br>Send your token <b class="token">'+data.token+'</b> to friends.',
 					'status' : false
 				});
 				return;
