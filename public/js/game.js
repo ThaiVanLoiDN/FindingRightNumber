@@ -62,11 +62,24 @@
 			var rows = data.rows;
 			var cols = data.cols;
 			var freezeTime = data.freezeTime;
+
+			var listPhepTinh = data.listPhepTinh;
+			var listRequest = data.listRequest;
 			
 			seqNum = 0;
+
+			var stt = 0;
 			
 			var color = players_info[user].color;
-			$('#mainScreen').html('');
+			$('#mainScreen').html('<h1 data-result="' + listPhepTinh[stt].ketQua + '" id="ket-qua">' + listPhepTinh[stt].phepTinh + '</h1>');
+
+
+			socket.on('request_true',function(data){
+				stt++;
+				$('#ket-qua').attr('data-result', listPhepTinh[stt].ketQua);
+				$('#ket-qua').text(listPhepTinh[stt].phepTinh);
+
+			});
 			
 			//disable start button
 			$('#startGame').hide();
@@ -74,10 +87,18 @@
 			//generate grid
 			$('#mainScreen').append('<table class="table table-bordered"><tbody class="table-game"></tbody></table>');
 			var count = 1;
+			var sttRequest = 0;
 			for(var i=0;i<rows;i++){
 				$('#mainScreen > table > tbody').append('<tr id="'+i+'-tr"><tr/>');
 				for(var j=0;j<cols;j++){
-					$('#mainScreen > table > tbody > #'+i+'-tr').append('<td class="grid_cell" data-i="'+i+'" data-j="'+j+'" id="'+i+'-'+j+'">'+(count++)+'</td>');
+
+					$('#mainScreen > table > tbody > #'+i+'-tr').append('<td class="grid_cell" data-i="'+i+'" data-j="'+j+
+						'" data-request="'+
+
+						listRequest[sttRequest].ketQua
+
+						+'" id="'+i+'-'+j+'">' + listRequest[sttRequest].ketQua + '</td>');
+					sttRequest++;
 				}
 			}
 			
@@ -106,13 +127,20 @@
 			
 			$('.grid_cell').click(function(e){
 				var cellId = e.target.id;
+
+				var request = $(this).attr('data-request'); 
+				var result = $('#ket-qua').attr('data-result'); 
+
 				if(!$('#'+cellId).hasClass("done")){
 					socket.emit('cell_click',{
 						'token' : token,
 						'user' : user,
 						'color' : color,
 						'cellId' : cellId,
-						'seqNum' : seqNum
+						'seqNum' : seqNum,
+						'result' : result,
+						'request' : request,
+
 					});
 				}
 			});
