@@ -1,52 +1,40 @@
-# Click-Game
-Multiplayer game implemented using the following technologies : 
+#Finding Right Number
 
-### Client side
+###Client side
 
-* HTML5, CSS3, <a href="http://getbootstrap.com/" target="_blank">Twitter bootstrap</a> and <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font awesome</a> to make a nice looking UI
-* <a href="http://jquery.com/" target="_blank">JQuery</a> for client side logic
-* <a href="http://socket.io/" target="_blank">Socket.io</a> client to make real time gaming possible
+HTML5, CSS3, Bootstrap and Font awesome
+JQuery
+Socket.io client
 
-### Server side
+###Server side
 
-* <a href="http://nodejs.org/" target="_blank">Node JS</a> as web server
-* <a href="http://expressjs.com/" target="_blank">Express JS</a> as web framework
-* <a href="http://socket.io/" target="_blank">Socket.io</a> server to make real time gaming possible
-* <a href="http://handlebarsjs.com/" target="_blank">Handlebars.js</a> to easily render HTML templates
+Node JS
+Express JS
+Socket.io server
+Handlebars.js
 
-#Application Flow
-* Player can either create/join a game.
-* To join a game a <b>token</b> is required.(Available readily at the creator/host of the game)
-* Once player joined the game he need to wait until game creator/host starts the game.
-* As the game is started, once can click a cell to acquire it --- Need to be fast to win the game.
-* When all the cells are acquired then game is completed and winners are declared.
+###Luật chơi
+1. Mỗi người chơi có thể tạo phòng chơi mới hoặc join vào những phòng đã tạo sẵn.
 
-#Game - Instructions
-- On the home page players should be able to start a game or join current games.
-- Each player is assigned a random color, when he/she joins the game.
-- A board of configurable dimension will be shown to all the players.
-- Player who created can start the game.
-- Each player can hover over the board and squares will light up with their assigned color
-- Player can select the square by clicking it
-- A player can acquire the square by clicking it
-- Once a square is acquired it gets filled with the player's color
-- An acquired square cannot be taken by any other player and its color will not change on hovering
-- Once a square is selected by a player, all players are blocked for x seconds to do anything
-- After x seconds, board becomes available again for all the players
-- Game ends when all squares are colored and players with maximum squared colored wins.
+a. Tạo phòng chơi mới
+Người chơi có thể gõ tên của mình vào form tạo phòng chơi mới. Hệ thống sẽ sinh ra một chuỗi ký tự ngẫu nhiên.
+Người chơi có thể gửi chuỗi ký tự này đến những người bạn của mình để cho thể chơi chung.
 
-### Build and Run the application
+b. Join vào phòng đã tạo
+Người chơi nhập key của phòng và tên của mình vào ô Join phòng
 
-#### Prerequisites
+2. Phòng có thể bắt đầu khi số người chơi từ 2 trở lên. Chỉ có người tạo phòng mới có thể bắt đầu trò chơi.
+Số lượng thành viên trong phòng không giới hạn.
+Trong khi trò chơi chưa được bắt đầu, mọi người có key của phòng đều có thể vào phòng.
+Nếu phòng đã bắt đầu chơi, người dùng không thể vào phòng đó được.
 
-* Node JS
+3. Chương trình sẽ hiện ra một bảng gồm 16 số và một phép tính.
+Người chơi chọn kết quả phép tính cho rằng là đúng. 
+Nếu kết quả này sai, người chơi có thể chọn tiếp đáp án khác.
+Nếu kết quả đúng, người chơi sẽ +1 điểm và chương trình sẽ hiện ra phép toán khác. Đồng thời ô chứa kết quả đúng vừa rồi không được chọn nữa.
 
-#### Run the application
+4. Khi tất cả các ô đều đã được chọn đúng, người có điểm số cao nhất sẽ là người chiến thắng.
+Người chơi có thể tự ý rời phòng bất kỳ lúc nào.
+Khi phòng đang chơi chỉ còn lại 1 người, người đó là người chiến thắng.
 
-```
-$> npm install
-$> node app.js
-```
-
-Browse the following address: <a href="http://localhost:8001" target="_blank">`http://localhost:8001`</a>
-
+Chúc các bạn chơi vui vẻ
