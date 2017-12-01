@@ -71,7 +71,7 @@
 			var stt = 0;
 			
 			var color = players_info[user].color;
-			$('#mainScreen').html('<h1 data-result="' + listPhepTinh[stt].ketQua + '" id="ket-qua">' + listPhepTinh[stt].phepTinh + '</h1>');
+			$('#mainScreen').html('<h1 data-result="' + listPhepTinh[stt].ketQua + '" id="ket-qua">' + listPhepTinh[stt].phepTinh + ' = ???</h1>');
 
 
 			socket.on('request_true',function(data){

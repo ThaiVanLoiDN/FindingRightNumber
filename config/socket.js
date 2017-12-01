@@ -100,7 +100,13 @@ module.exports = function(server){
 			data.cols = game.cols;
 			data.freezeTime = game.freezeTime;
 
-			listPhepTinh = getListPhepTinh();
+			listAllPhepTinh = getListPhepTinh();
+			listAllPhepTinh.sort(function(a, b){return 0.5 - Math.random()});
+
+			listPhepTinh = getNPhepTinh(listAllPhepTinh);
+			
+			console.log(listPhepTinh);
+
 			listRequest = listPhepTinh.slice();
 			listPhepTinh.sort(function(a, b){return 0.5 - Math.random()});
 			listRequest.sort(function(a, b){return 0.5 - Math.random()});
@@ -220,47 +226,19 @@ module.exports = function(server){
 		}
 
 		function getListPhepTinh(){
-			return [
-				{ketQua:"0", phepTinh: '0 * 1'} ,
-				{ketQua:"1", phepTinh: '1 * 1'},
-				{ketQua:"2", phepTinh: '2 * 1'},
-				{ketQua:"3", phepTinh: '3 * 1'},
+			var x = require('./data.json');
 
-				{ketQua:"4", phepTinh: '4 * 1'},
-				{ketQua:"5", phepTinh: '5 * 1'},
-				{ketQua:"6", phepTinh: '6 * 1'},
-				{ketQua:"7", phepTinh: '7 * 1'},
+			return x;
+		}
 
-				{ketQua:"8", phepTinh: '8 * 1'},
-				{ketQua:"9", phepTinh: '9 * 1'},
-				{ketQua:"10", phepTinh: '10 * 1'},
-				{ketQua:"11", phepTinh: '11 * 1'},
-				
-				{ketQua:"12", phepTinh: '12 * 1'},
-				{ketQua:"13", phepTinh: '13 * 1'},
-				{ketQua:"14", phepTinh: '14 * 1'},
-				{ketQua:"15", phepTinh: '15 * 1'},
+		function getNPhepTinh(listAllPhepTinh){
 
-				// {ketQua:"16", phepTinh: '16 * 2'},
-				// {ketQua:"17", phepTinh: '17 * 2'},
-				// {ketQua:"18", phepTinh: '18 * 2'},
-				// {ketQua:"19", phepTinh: '19 * 2'},
+			var x = [];
+			for (var i = 0; i <= 15; i++) {
+				x.push(listAllPhepTinh[i]);
+			}
 
-				// {ketQua:"20", phepTinh: '20 * 2'},
-				// {ketQua:"21", phepTinh: '21 * 2'},
-				// {ketQua:"22", phepTinh: '22 * 2'},
-				// {ketQua:"23", phepTinh: '23 * 2'},
-				
-				// {ketQua:"24", phepTinh: '24 * 2'},
-				// {ketQua:"25", phepTinh: '25 * 2'},
-				// {ketQua:"26", phepTinh: '26 * 2'},
-				// {ketQua:"27", phepTinh: '27 * 2'},
-				
-				// {ketQua:"28", phepTinh: '28 * 2'},
-				// {ketQua:"29", phepTinh: '29 * 2'},
-				// {ketQua:"30", phepTinh: '30 * 2'},
-				// {ketQua:"31", phepTinh: '31 * 2'}
-			];
+			return x;
 		}
 		
 		function getWinner(game){

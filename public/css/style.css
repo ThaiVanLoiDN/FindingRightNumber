@@ -86,14 +86,12 @@ div.footer .copyright{
 	padding: 10px;
 }
 
-.table-game .grid_cell{}
-
-
 .table-game .grid_cell{
 	cursor: pointer;
 	padding: 20px 0px;
 	font-size: 30px;
 	text-align: center;
+	width: 25%
 }
 
 /* =========================== Game Start ===========================*/
@@ -148,4 +146,8 @@ div#mainScreen {
 }
 .btn-quite{
 	width: 100%;
+}
+#ket-qua{
+	color: red;
+	
 }

@@ -12,6 +12,7 @@
     "debug": "",
     "express": "",
     "express-session": "",
+    "jsonfile": "^4.0.0",
     "hbs": "",
     "lodash": "",
     "moment": "",
