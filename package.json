@@ -1,8 +1,8 @@
 {
-  "name": "Finomena-Assignment",
+  "name": "Finding Right Number",
   "version": "1.0.0",
-  "description": "Realtime web server for game",
-  "author": "Anil Kumar",
+  "description": "Finding Right Number",
+  "author": "DHL Band",
   "main": "app.js",
   "dependencies": {
     "body-parser": "",
